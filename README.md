@@ -9,7 +9,7 @@ We input the mean values of ouput embeddings in last layer to make the predictio
 
 Also, we use the basic [EDA](https://arxiv.org/abs/1901.11196) to augment the training data with synonym replacement, random insertion, random swap and random deletion, aiming to make improve model robustness for word order and stacking
 
-The pre-training model we used is deberta-v2-xxlarge, and the input method is [CLS] qustion [SEP] 'concept is '+ question-concept +'so the answer is ' + answer [SEP]
+The pre-training model we used is deberta-v2-xxlarge, and the input method is [CLS] qustion [SEP] answer + 'with concept is '+ question-concept [SEP]
 
 The result is evaluated on the provided question-choices pairs without extra data.
 
