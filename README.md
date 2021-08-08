@@ -11,7 +11,7 @@ Also, we use the basic [EDA](https://arxiv.org/abs/1901.11196) to augment the tr
 
 The pre-training model we used is deberta-v2-xxlarge, and the input method is [CLS] qustion [SEP] answer + 'with concept is '+ question-concept [SEP]
 
-After Finetuning with the lr=4e-6, we use the Pseudo-Labelling Method to predict the test label and add them to the training data, countinuing finetuning with the lr=1e-6.
+After Finetuning with the lr=4e-6, we countinue finetuning the model with the lr=1e-6.
 
 Although we find the addition of extra conception of the question sentence can improve the performance obviously, here we only use the provided information for seeking a better finetuning method and sentence format for commonsense question. So the result is evaluated on the provided question-choices pairs without extra data.
 
@@ -25,7 +25,7 @@ The parameters are listed below:
 - MAX_SEQ_LENGTH = 90
 - TRAIN_BATCH_SIZE = 32
 - GRADIENT_ACCUMULATION_STEPS = 1
-- LEARNING_RATE = 4e-6 (2 epoch)/ 1e-6 (6 epoch)
+- LEARNING_RATE = 4e-6 (2 epoch)/ 1e-6 (1 epoch)
 - WEIGHT_DECAY = 0.0
 - ADAM_EPSILON = 1e-8
 - NUM_TRAIN_EPOCHS=8
