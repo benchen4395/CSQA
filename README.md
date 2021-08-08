@@ -11,13 +11,15 @@ Also, we use the basic [EDA](https://arxiv.org/abs/1901.11196) to augment the tr
 
 The pre-training model we used is deberta-v2-xxlarge, and the input method is [CLS] qustion [SEP] answer + 'with concept is '+ question-concept [SEP]
 
+The loss we used is modified heated-up softmax loss derived from https://github.com/ColumbiaDVMM/Heated_Up_Softmax_Embedding.
+
 After Finetuning with the lr=4e-6, we countinue finetuning the model with the lr=1e-6.
 
 Although we find the addition of extra conception of the question sentence can improve the performance obviously, here we only use the provided information for seeking a better finetuning method and sentence format for commonsense question. So the result is evaluated on the provided question-choices pairs without extra data.
 
 ## Hyper-parameters Setting: 
 
-In our experiments, we used the pre-trained ALBERT-xxlarge-v2 model from https://huggingface.co/microsoft/deberta-v2-xxlarge, and implement a DebertaForMultipleChoice function to the task.
+In our experiments, we used the pre-trained DeBERTa-xxlarge-v2 model from https://github.com/microsoft/DeBERTa, and implement a DebertaForMultipleChoice function to the task.
 
 The parameters are listed below:
 - `EDA parameter` alpha_sr=alpha_ri=alpha_rs=alpha_rd=0.1, num_aug=4
