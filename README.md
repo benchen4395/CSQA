@@ -17,7 +17,7 @@ After Finetuning with the lr=4e-6, we countinue finetuning the model with the lr
 
 Although we find the addition of extra conception of the question sentence can improve the performance obviously, here we only use the provided information for seeking a better finetuning method and sentence format for commonsense question. 
 
-Beside, we try to use the Flan-T5 to explain the conception of question-concept, for those questions whose predicted score of most reliable answer is lower than 0.5. In this way, we replace the question-concept by the explaination. This method tackle about 40 questions, and all results are choosed only by deberta-xxlarge-v2 with no other models.
+Beside, we try to use the [Flan-T5](https://arxiv.org/pdf/2210.11416.pdf) to explain the conception of question-concept, for those questions whose predicted score of most reliable answer is lower than 0.7. In this way, we replace the question-concept by the explaination. This method tackle about 100 questions, and all results are choosed only by deberta-xxlarge-v2 with no other models.
 
 So the result is evaluated on the provided question-choices pairs without extra data.
 
